@@ -119,6 +119,8 @@ RUN curl -fL https://github.com/krallin/tini/archive/v${TINI_VER}.tar.gz \
         | tar xz --strip-components=1 \
  && curl -fsS https://github.com/krallin/tini/commit/7c430f3eb68ebfc8a8706ab09faad6c6fa8aa13e.patch \
         | git apply \
+ && curl -fsS https://github.com/krallin/tini/commit/071c715e376e9ee0ac1a196fe8c38bcb61ad385c.patch \
+        | git apply \
  && cmake . \
  && make tini \
  && install -Dm755 tini "$OUTPUT/usr/sbin/tini"
